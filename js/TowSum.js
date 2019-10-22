@@ -25,6 +25,7 @@ class TowSum {
         }
         return [];
     }
+    /**最慢 */
     solution3(nums, target) {
         for (let i = 0, length = nums.length; i < length; i++) {
             let dif = target - nums[i];
