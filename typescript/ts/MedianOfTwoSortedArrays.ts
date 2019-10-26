@@ -1,3 +1,5 @@
+
+import { Tool } from "./Tool"
 (() => {
     class MedianOfTwoSortedArrays {
         solution(nums1: number[], nums2: number[]): number | undefined {
@@ -69,6 +71,9 @@
 
         }
     }
+
     let mdianOfTwoSortedArrays = new MedianOfTwoSortedArrays
+
     console.log(mdianOfTwoSortedArrays.solution3([1, 2], [3, 4]))
+
 })()

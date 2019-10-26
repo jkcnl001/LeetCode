@@ -1,13 +1,13 @@
-module.exports = class Tool {
+export class Tool {
     mStartTime: number = 0
-    mTimeArr: number[] = []
+    mLastTime: number = 0
     constructor() {
         this.mStartTime = new Date().getTime()
-        this.mTimeArr.push(this.mStartTime)
+        this.mLastTime = this.mStartTime
     }
     getTimeCallDlt(tag: string = '') {
         let time = new Date().getTime()
-        console.log(`${tag}${time - this.mTimeArr[this.mTimeArr.length - 1]}`)
-        this.mTimeArr.push(time)
+        console.log(`${tag} : ${time - this.mLastTime}`)
+        this.mLastTime = time
     }
 }
