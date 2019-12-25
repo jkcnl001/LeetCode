@@ -1,56 +1,74 @@
+/**
+    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+    You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+    Example:
+          Given nums = [2, 7, 11, 15], target = 9,
+          Because nums[0] + nums[1] = 2 + 7 = 9,
+          return [0, 1].
+ */
 (() => {
     class TowSum {
-        solution(nums: number[], target: number): (number | undefined)[] {
+        solution1(numbers: number[], target: number): (number | undefined)[] {
             let map: Map<number, number> = new Map();
             let arr: (number | undefined)[] = new Array()
-            for (let i in nums) {
+            numbers.forEach((element, index) => {
                 map.set(
-                    nums[i],
-                    parseInt(i)
+                    element,
+                    index
                 )
-            }
-
-            for (let j = 0; j < nums.length - 1; j++) {
-                if (map.has(target - nums[j]) && map.get(target - nums[j]) != j) {
-                    arr.push(j, map.get(target - nums[j]));
+            })
+            for (let j = 0; j < numbers.length - 1; j++) {
+                if (map.has(target - numbers[j]) && map.get(target - numbers[j]) != j) {
+                    arr.push(j, map.get(target - numbers[j]));
                     return arr
                 }
             }
             return []
         }
-        solution2(nums: number[], target: number): (number | undefined)[] {
+        solution2(numbers: number[], target: number): (number | undefined)[] {
             let temp: number[] = new Array();
-            for (let i = 0, length = nums.length; i < length; i++) {
-                let dif = target - nums[i];
-                if (temp[dif] != undefined) {
-                    return [temp[dif], i];
+            for (let i = 0, length = numbers.length; i < length; i++) {
+                let differ = target - numbers[i];
+                if (temp[differ] != undefined) {
+                    return [temp[differ], i];
                 }
-                temp[nums[i]] = i;
+                temp[numbers[i]] = i;
             }
             return []
         }
-        solution3(nums: number[], target: number): (number | undefined)[] {
-            for (let i = 0, length = nums.length; i < length; i++) {
-                let dif = target - nums[i];
-                let lastIndex = nums.lastIndexOf(dif)
+        solution3(numbers: number[], target: number): (number | undefined)[] {
+            for (let i = 0, length = numbers.length; i < length; i++) {
+                let differ = target - numbers[i];
+                let lastIndex = numbers.lastIndexOf(differ)
                 if (lastIndex != -1 && lastIndex != i) {
                     return [i, lastIndex];
                 }
             }
             return []
         }
-        solution4(nums: number[], target: number): (number | undefined)[] {
+        solution4(numbers: number[], target: number): (number | undefined)[] {
             let map: Map<number, number> = new Map();
-            for (let i = 0, length = nums.length; i < length; i++) {
-                let dif = target - nums[i];
-                if (map.has(dif)) {
-                    return [i, map.get(dif)]
+            for (let i = 0, length = numbers.length; i < length; i++) {
+                let differ = target - numbers[i];
+                if (map.has(differ)) {
+                    return [i, map.get(differ)]
                 }
-                map.set(nums[i], i)
+                map.set(numbers[i], i)
             }
             return []
         }
     }
+    console.time("3")
     let towSum: TowSum = new TowSum()
+    console.timeEnd("3")
+
+    console.time("1")
     console.log(towSum.solution2([2, 7, 11, 15], 9))
+    console.timeEnd("1")
+
+    console.time("2")
+    console.log(towSum.solution1([2, 7, 11, 15], 9))
+    console.timeEnd("2")
+
 })()

@@ -1,42 +1,52 @@
+/**
+    You are given two non-empty linked lists representing two non-negative integers. 
+    The digits are stored in reverse order and each of their nodes contain a single digit.
+    Add the two numbers and return it as a linked list.
+    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+    Example:
+        Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+        Output: 7 -> 0 -> 8
+        Explanation: 342 + 465 = 807
+ */
 (() => {
     class ListNode {
-        val: number = 0;
+        value: number = 0;
         next: ListNode | undefined = undefined
-        constructor(val: number) {
-            this.val = val
+        constructor(value: number = 0) {
+            this.value = value
         }
     }
-
     class AddTwoNumbers {
-        solution(l1: ListNode | undefined, l2: ListNode | undefined) {
-            let l3 = new ListNode(0)
-            let next = l3
+        solution(listNode1: ListNode | undefined, listNode2: ListNode | undefined) {
+            let listNode3 = new ListNode(0)
+            let next = listNode3
             let params = 0
-            let val = 0
-            let val1 = 0
-            let val2 = 0
-            while (l1 || l2) {
-                val1 = (l1 && l1.val) ? l1.val : 0
-                val2 = (l2 && l2.val) ? l2.val : 0
-                val = val1 + val2 + params
-                params = Math.floor(val / 10)
-                val = val % 10
-                next.next = new ListNode(val)
-                if (l1 != undefined) {
-                    l1 = l1.next
+            let value = 0
+            let value1 = 0
+            let value2 = 0
+            while (listNode1 || listNode2) {
+                value1 = (listNode1 && listNode1.value) ? listNode1.value : 0
+                value2 = (listNode2 && listNode2.value) ? listNode2.value : 0
+                value = value1 + value2 + params
+                params = Math.floor(value / 10)
+                value = value % 10
+                next.next = new ListNode(value)
+                if (listNode1 != undefined) {
+                    listNode1 = listNode1.next
                 }
-                if (l2 != undefined) {
-                    l2 = l2.next
+                if (listNode2 != undefined) {
+                    listNode2 = listNode2.next
                 }
                 next = next.next
             }
             if (params) {
                 next.next = new ListNode(params)
             }
-            return l3.next
+            return listNode3.next
         }
     }
-    let createListByArr = (arr: number[]): ListNode | undefined => {
+
+    function createListByArr(arr: number[]): ListNode | undefined {
         if (arr.length == 0) {
             return
         }
@@ -48,8 +58,12 @@
         }
         return head
     }
-    let l1 = createListByArr([2, 4, 3])
-    let l2 = createListByArr([5, 6, 4])
+    let listNode1 = createListByArr([9, 9, 9, 9])
+    let listNode2 = createListByArr([9, 9, 9, 9])
     let addTwoNumbers = new AddTwoNumbers()
-    console.log(addTwoNumbers.solution(l1, l2))
+    let listNode3 = addTwoNumbers.solution(listNode1, listNode2)
+    while (listNode3) {
+        console.log(listNode3.value)
+        listNode3 = listNode3.next
+    }
 })()
