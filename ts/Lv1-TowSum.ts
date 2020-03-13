@@ -31,7 +31,7 @@ const towSum = [
         })
         // length = numbers.length - 1
         for (let j = 0; j < numbers.length - 1; j++) {
-            if (map.has(target - numbers[j]) != undefined && map.get(target - numbers[j]) != j) {
+            if (map.has(target - numbers[j]) && map.get(target - numbers[j]) != j) {
                 arr.push(j, map.get(target - numbers[j]) as number);
                 return arr
             }
