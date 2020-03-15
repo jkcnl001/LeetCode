@@ -7,7 +7,7 @@
           Because nums[0] + nums[1] = 2 + 7 = 9,
           return [0, 1].
  */
-const towSum = [
+export default [
     function (numbers: number[], target: number): number[] {
         for (let i = 0, length = numbers.length; i < length; i++) {
             let differ = target - numbers[i];
@@ -16,24 +16,6 @@ const towSum = [
                 if (numbers[j] == differ) {
                     return [numbers[i], numbers[j]]
                 }
-            }
-        }
-        return []
-    },
-    function (numbers: number[], target: number): number[] {
-        let map: Map<number, number> = new Map();
-        let arr: number[] = new Array()
-        numbers.forEach((element, index) => {
-            map.set(
-                element,
-                index
-            )
-        })
-        // length = numbers.length - 1
-        for (let j = 0; j < numbers.length - 1; j++) {
-            if (map.has(target - numbers[j]) && map.get(target - numbers[j]) != j) {
-                arr.push(j, map.get(target - numbers[j]) as number);
-                return arr
             }
         }
         return []
@@ -50,7 +32,6 @@ const towSum = [
         return []
     }
 ]
-export default towSum
 
 
 
