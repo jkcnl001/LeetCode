@@ -4,6 +4,7 @@ import GetSumIsZeroSubArray from './Off TheCoast/Lesson3-GetSumIsZeroSubArray'
 import LongestCommonSubsequence from "./Off TheCoast/Lesson4-LongestCommonSubsequence"
 import RotateStringLeft from "./Off TheCoast/Lesson5-RotateStringLeft"
 import FullPermutation from "./Off TheCoast/Lesson6-FullPermutation"
+import Kmp from "./Off TheCoast/Lesson7-KMP"
 // console.log(MedianOfTwoSortedArrays[2]([], [2, 3]))
 // console.log(MaximumContinuousSubarray[0]([]))
 // console.log(MaximumContinuousSubarray[1]([]))
@@ -17,7 +18,8 @@ import FullPermutation from "./Off TheCoast/Lesson6-FullPermutation"
 // }
 
 // console.log(RotateStringLeft[0]("abcdef", 10.5))
-console.log(FullPermutation[0](["a", "b", "c", "d"]))
+// let a = FullPermutation[0](["a", "b", "c", "d"])
+// console.log(a)
 // var arr = ["a", "b", "c", "d"];
 // var d = arr.length;
 // while (d--) {
@@ -28,3 +30,16 @@ console.log(FullPermutation[0](["a", "b", "c", "d"]))
 //         console.log("1");
 //     }
 // }
+// function Getnext(next: number[], t: string) {
+//     let j = 0, k = -1;
+//     next[0] = -1;
+//     while (j < t.length - 1) {
+//         if (k == -1 || t[j] == t[k]) {
+//             j++; k++;
+//             next[j] = k;
+//         }
+//         else k = next[k];//此语句是这段代码最反人类的地方，如果你一下子就能看懂，那么请允许我称呼你一声大神！
+//     }
+// }
+let func: Function = Kmp[1]
+console.log(func(" abcdabceedabcdabcdabceeabcdabceedabcdabcdabcee", "abcdabceedabcdabcdabcee"));
