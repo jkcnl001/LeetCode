@@ -5,6 +5,8 @@ import LongestCommonSubsequence from "./Off TheCoast/Lesson4-LongestCommonSubseq
 import RotateStringLeft from "./Off TheCoast/Lesson5-RotateStringLeft"
 import FullPermutation from "./Off TheCoast/Lesson6-FullPermutation"
 import Kmp from "./Off TheCoast/Lesson7-KMP"
+import GetNumBySumFromArr from "./Off TheCoast/Lesson9-GetNumBySumFromArr"
+import FibonacciSequence from "./Off TheCoast/Lesson11-FibonacciSequence"
 // console.log(MedianOfTwoSortedArrays[2]([], [2, 3]))
 // console.log(MaximumContinuousSubarray[0]([]))
 // console.log(MaximumContinuousSubarray[1]([]))
@@ -41,5 +43,10 @@ import Kmp from "./Off TheCoast/Lesson7-KMP"
 //         else k = next[k];//此语句是这段代码最反人类的地方，如果你一下子就能看懂，那么请允许我称呼你一声大神！
 //     }
 // }
-let func: Function = Kmp[1]
-console.log(func(" abcdabceedabcdabcdabceeabcdabceedabcdabcdabcee", "abcdabceedabcdabcdabcee"));
+// let func: Function = Kmp[1]
+// console.log(func(" abcdabceedabcdabcdabceeabcdabceedabcdabcdabcee", "abcdabceedabcdabcdabcee"));
+// GetNumBySumFromArr[0]([0, 1, 2, 3, 4, 5], 10)
+console.log(FibonacciSequence[1](64))
+setTimeout(() => {
+
+}, 2000)
