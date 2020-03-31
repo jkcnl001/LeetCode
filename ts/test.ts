@@ -7,6 +7,8 @@ import FullPermutation from "./Off TheCoast/Lesson6-FullPermutation"
 import Kmp from "./Off TheCoast/Lesson7-KMP"
 import GetNumBySumFromArr from "./Off TheCoast/Lesson9-GetNumBySumFromArr"
 import FibonacciSequence from "./Off TheCoast/Lesson11-FibonacciSequence"
+import FibonacciSearch from "./Off TheCoast/Lesson12-FibonacciSearch"
+import Sort from "./Off TheCoast/Lesson13-Sort"
 // console.log(MedianOfTwoSortedArrays[2]([], [2, 3]))
 // console.log(MaximumContinuousSubarray[0]([]))
 // console.log(MaximumContinuousSubarray[1]([]))
@@ -46,7 +48,27 @@ import FibonacciSequence from "./Off TheCoast/Lesson11-FibonacciSequence"
 // let func: Function = Kmp[1]
 // console.log(func(" abcdabceedabcdabcdabceeabcdabceedabcdabcdabcee", "abcdabceedabcdabcdabcee"));
 // GetNumBySumFromArr[0]([0, 1, 2, 3, 4, 5], 10)
-console.log(FibonacciSequence[1](64))
+// console.log(FibonacciSequence[1](64))
+// console.log(FibonacciSearch[0]([1,3,5,8,9,10,13,15,20,21,30,40,44,55,60,71,88,89,99,102],44))
+console.time("1")
+console.log(JSON.stringify(Sort[0]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("1")
+console.time("2")
+console.log(JSON.stringify(Sort[1]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("2")
+console.time("3")
+console.log(JSON.stringify(Sort[2]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("3")
+console.time("4")
+console.log(JSON.stringify(Sort[3]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("4")
+console.time("5")
+console.log(JSON.stringify(Sort[4]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("5")
+console.time("6")
+console.log(JSON.stringify(Sort[5]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("6")
+console.time("7")
 setTimeout(() => {
 
 }, 2000)
