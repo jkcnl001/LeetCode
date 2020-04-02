@@ -9,6 +9,11 @@ import GetNumBySumFromArr from "./Off TheCoast/Lesson9-GetNumBySumFromArr"
 import FibonacciSequence from "./Off TheCoast/Lesson11-FibonacciSequence"
 import FibonacciSearch from "./Off TheCoast/Lesson12-FibonacciSearch"
 import Sort from "./Off TheCoast/Lesson13-Sort"
+import cluster, { worker } from "cluster"
+import os from 'os'
+import Hanoi from "./Off TheCoast/Lesson14-Hanoi"
+const numCUPs = os.cpus().length
+
 // console.log(MedianOfTwoSortedArrays[2]([], [2, 3]))
 // console.log(MaximumContinuousSubarray[0]([]))
 // console.log(MaximumContinuousSubarray[1]([]))
@@ -69,6 +74,16 @@ console.time("6")
 console.log(JSON.stringify(Sort[5]([0, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
 console.timeEnd("6")
 console.time("7")
-setTimeout(() => {
+console.log(JSON.stringify(Sort[6]([99, 88, 1, 2, 3, 5, 1, 2, 6, 7, 8, 9, 20, 12, 55, 33, 99, 44, 33, 55, 67, 88, 0, 99])))
+console.timeEnd("7")
 
+setTimeout(() => {
+    Hanoi[0](64)
+}, 1000);
+setTimeout(() => {
+    Hanoi[1](64)
 }, 2000)
+
+
+
+

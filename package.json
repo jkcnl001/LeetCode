@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jkcnl001/LeetCode/issues"
   },
-  "homepage": "https://github.com/jkcnl001/LeetCode#readme"
+  "homepage": "https://github.com/jkcnl001/LeetCode#readme",
+  "dependencies": {
+    "@types/node": "^13.9.8"
+  }
 }
