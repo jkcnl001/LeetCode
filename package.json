@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/jkcnl001/LeetCode#readme",
   "dependencies": {
-    "@types/node": "^13.9.8"
+    "@types/node": "^13.13.14"
   }
 }
