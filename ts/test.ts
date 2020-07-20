@@ -12,7 +12,6 @@ import Sort from "./Off TheCoast/Lesson13-Sort"
 import cluster, { worker } from "cluster"
 import os from 'os'
 import Hanoi from "./Off TheCoast/Lesson14-Hanoi"
-import Utils from './Tool/Utils'
 // const numCUPs = os.cpus().length
 
 // console.log(MedianOfTwoSortedArrays[2]([], [2, 3]))
@@ -83,14 +82,3 @@ import Utils from './Tool/Utils'
 // }, 1000);
 // setTimeout(() => {
 //     Hanoi[1](64)
-// }, 2000)
-
-const arr = [99, -1, 56, 30, 71, 18, 29, 93, 44, 75, 100, 99, 20, 65, 68, 34, 5, 7];
-// findTopN(5, arr);
-// console.log(arr);
-
-// console.log(MaxHeapInt(arr));
-// console.log(arr);
-
-console.log(Utils.findTopN(10, arr));
-console.log(arr.sort((a, b) => { return b - a }).splice(0, 10));
